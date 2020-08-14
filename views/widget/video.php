@@ -1,2 +1,2 @@
-<video src="" id="previewvideo" controls></video>
+<video src="<?= htmlReady($url) ?>" id="previewvideo" controls></video>
 
