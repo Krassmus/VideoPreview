@@ -1,4 +1,5 @@
 video#previewvideo {
     width: 100%;
+    max-width: 100%;
     height: 400px;
 }
