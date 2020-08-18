@@ -5,7 +5,7 @@ class VideoPreview extends StudIPPlugin implements SystemPlugin, DetailspagePlug
     public function __construct()
     {
         parent::__construct();
-
+        PageLayout::addStylesheet($this->getPluginURL()."/assets/videopreview.css");
         if (Navigation::hasItem("/course")
                 && Context::get()->id
                 && Context::isCourse()
@@ -22,7 +22,6 @@ class VideoPreview extends StudIPPlugin implements SystemPlugin, DetailspagePlug
         if (!CourseConfig::get($course->id)->VIDEOPREVIEW_URL) {
             return null;
         }
-        PageLayout::addStylesheet($this->getPluginURL()."/assets/videopreview.css");
         $tf = new Flexi_TemplateFactory(__DIR__."/views");
         $template = $tf->open("widget/video");
         $template->url = CourseConfig::get($course->id)->VIDEOPREVIEW_URL;
