@@ -19,11 +19,11 @@ class SettingsController extends PluginController
             if (Request::submitted("delete")) {
                 CourseConfig::get(Context::get()->id)->delete("VIDEOPREVIEW_TITLE");
                 CourseConfig::get(Context::get()->id)->delete("VIDEOPREVIEW_URL");
-                PageLayout::postSuccess(_("Das Vorschauvideo wurde gelöscht."));
+                PageLayout::postSuccess(dgettext("videopreview", "Das Vorschauvideo wurde gelöscht."));
             } else {
                 CourseConfig::get(Context::get()->id)->store("VIDEOPREVIEW_TITLE", Request::get("title"));
                 CourseConfig::get(Context::get()->id)->store("VIDEOPREVIEW_URL", Request::get("url"));
-                PageLayout::postSuccess(_("Daten des Videos wurden gespeichert."));
+                PageLayout::postSuccess(dgettext("videopreview", "Daten des Videos wurden gespeichert."));
             }
         }
         $this->redirect("settings/video");
