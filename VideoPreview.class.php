@@ -7,7 +7,7 @@ class VideoPreview extends StudIPPlugin implements SystemPlugin, DetailspagePlug
         bindtextdomain("videopreview", __DIR__."/locale");
         parent::__construct();
         PageLayout::addStylesheet($this->getPluginURL()."/assets/videopreview.css");
-        if (Navigation::hasItem("/course")
+        if (Navigation::hasItem("/course/admin")
                 && Context::get()->id
                 && Context::isCourse()
                 && $GLOBALS['perm']->have_studip_perm("tutor", Context::get()->id)) {
